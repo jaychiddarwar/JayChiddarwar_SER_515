@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Facade {
 
 	private int UserType;
@@ -6,7 +8,7 @@ public class Facade {
 
 	private int nProductCategory;
 
-	private ClassProjecutList theProjectList;
+	private ClassProductList theProductList;
 
 	private Person thePerson;
 
@@ -20,6 +22,24 @@ public class Facade {
 		System.out.println("Facade ==>");
 		UserType = login(new Login());
 		System.out.println("User is : " + UserType);
+
+		while(true){
+			System.out.println("Select Product from following : \n 0. Meat Product \n 1. Produce Product");
+			Scanner sn = new Scanner(System.in);
+			String inp1 = sn.nextLine();
+			if (inp1.equalsIgnoreCase("meat product") || inp1.equalsIgnoreCase("0")){
+				nProductCategory = 0;
+				break;
+			}else if (inp1.equalsIgnoreCase("produce product") || inp1.equalsIgnoreCase("1")){
+				nProductCategory = 1;
+				break;
+			}else {
+				System.out.println("Wrong Input Selected, select again");
+
+			}
+			System.out.println("visitor pattern");
+		}
+
 
 
 	}
