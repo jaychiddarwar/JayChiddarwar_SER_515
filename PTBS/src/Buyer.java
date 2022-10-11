@@ -5,6 +5,16 @@ public class Buyer extends  Person{
     }
 
     @Override
+    public void showLabels() {
+
+    }
+
+    @Override
+    public void showComboxes() {
+
+    }
+
+    @Override
     public ProductMenu CreateProductMenu() {
         return null;
     }
