@@ -32,13 +32,13 @@ public class Login {
         HashMap<String, String> sellerList = new HashMap<>();
 
         try{
-            File fin = new File("D:\\Projects\\SER-515 Design Pattern Individual\\PTBS\\PTBS\\src\\BuyerInfo.txt");
+            File fin = new File("BuyerInfo.txt");
             Scanner freader = new Scanner(fin);
             while(freader.hasNextLine()){
                 String[] temp = freader.nextLine().split(":");
                 buyerList.put(temp[0], temp[1]);
             }
-            File fin2 = new File("D:\\Projects\\SER-515 Design Pattern Individual\\PTBS\\PTBS\\src\\SellerInfo.txt");
+            File fin2 = new File("SellerInfo.txt");
             Scanner freader2 = new Scanner(fin2);
             while(freader2.hasNextLine()){
                 String[] temp = freader2.nextLine().split(":");
