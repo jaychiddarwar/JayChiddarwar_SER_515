@@ -1,4 +1,5 @@
 public class Buyer extends  Person{
+    private Offering offering;
     @Override
     public void showMenu() {
 

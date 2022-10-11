@@ -14,6 +14,8 @@ public class Facade {
 
 	private int attribute6;
 
+	private Reminder reminder;
+
 	public int login(Login login) {
 		return login.login();
 	}
