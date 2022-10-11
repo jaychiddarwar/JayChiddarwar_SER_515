@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class Login {
     int userType;
+    public String BUYER_INFO = "BuyerInfo.txt";
+    public String SELLER_INFO = "SellerInfo.txt";
     public Login(){
         userType = 0;
     }
@@ -32,13 +34,13 @@ public class Login {
         HashMap<String, String> sellerList = new HashMap<>();
 
         try{
-            File fin = new File("BuyerInfo.txt");
+            File fin = new File(BUYER_INFO);
             Scanner freader = new Scanner(fin);
             while(freader.hasNextLine()){
                 String[] temp = freader.nextLine().split(":");
                 buyerList.put(temp[0], temp[1]);
             }
-            File fin2 = new File("SellerInfo.txt");
+            File fin2 = new File(SELLER_INFO);
             Scanner freader2 = new Scanner(fin2);
             while(freader2.hasNextLine()){
                 String[] temp = freader2.nextLine().split(":");
