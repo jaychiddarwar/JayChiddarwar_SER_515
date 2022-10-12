@@ -39,8 +39,23 @@ public class Facade {
 				System.out.println("Wrong Input Selected, select again");
 
 			}
-			System.out.println("visitor pattern");
+//			System.out.println("visitor pattern");
 		}
+		Person person;
+		if(UserType == 0){
+			person = new Buyer();
+		}else {
+			person = new Seller();
+		}
+		ProductMenu productMenu ;
+		if(nProductCategory == 0){
+			productMenu = new MeatProductMenu();
+		}else {
+			productMenu = new ProduceProductMenu();
+		}
+		productMenu.showMenu();
+
+
 
 
 
