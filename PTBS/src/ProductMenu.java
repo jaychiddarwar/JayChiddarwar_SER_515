@@ -1,3 +1,5 @@
+import java.util.List;
+
 public interface ProductMenu {
 
 	public abstract void showMenu();
@@ -11,5 +13,9 @@ public interface ProductMenu {
 	public abstract void showLabels();
 
 	public abstract void showComboxes();
+
+	public abstract List<String> getProductList();
+
+
 
 }

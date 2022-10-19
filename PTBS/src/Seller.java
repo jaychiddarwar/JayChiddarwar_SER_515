@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Seller extends Person{
     private Offering offering;
     @Override
@@ -13,6 +15,11 @@ public class Seller extends Person{
     @Override
     public void showComboxes() {
 
+    }
+
+    @Override
+    public List<String> getProductList() {
+        return null;
     }
 
     @Override

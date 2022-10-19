@@ -1,17 +1,16 @@
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ProduceProductMenu implements ProductMenu{
     final public String PRODUCT_INFO = "ProductInfo.txt";
     final public String PRODUCT = "Produce";
+
+    ArrayList<String> productList;
     public ProduceProductMenu(){
         System.out.println("Factory Method started ...");
-    }
-    @Override
-    public void showMenu() {
-
-        ArrayList<String> productList = new ArrayList();
+        productList = new ArrayList();
         try{
             File fin = new File(PRODUCT_INFO);
             Scanner freader = new Scanner(fin);
@@ -24,11 +23,16 @@ public class ProduceProductMenu implements ProductMenu{
         }catch (Exception e){
             System.err.println(e);
         }
-        System.out.println(PRODUCT + " Menu is : ");
-        int counter = 1;
-        for (String s :productList){
-            System.out.println("" + counter++ + " " + s);
-        }
+//        System.out.println(PRODUCT + " Menu is : ");
+//        int counter = 1;
+//        for (String s :productList){
+//            System.out.println("" + counter++ + " " + s);
+//        }
+    }
+    @Override
+    public void showMenu() {
+
+
 
     }
 
@@ -55,5 +59,10 @@ public class ProduceProductMenu implements ProductMenu{
     @Override
     public void showComboxes() {
 
+    }
+
+    @Override
+    public List<String> getProductList() {
+        return this.productList;
     }
 }

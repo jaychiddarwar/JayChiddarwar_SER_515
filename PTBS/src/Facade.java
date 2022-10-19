@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Facade {
@@ -17,7 +18,7 @@ public class Facade {
 	private Reminder reminder;
 
 	public Facade(){
-		System.out.println("Facade Pattern has started ....");
+		System.out.println("Facade Pattern has started ....\n");
 	}
 
 	public int login(Login login) {
@@ -43,7 +44,7 @@ public class Facade {
 				System.out.println("Wrong Input Selected, select again");
 
 			}
-//			System.out.println("visitor pattern");
+			System.out.println("Visitor pattern Started ......");
 		}
 		Person person;
 		if(UserType == 0){
@@ -57,7 +58,18 @@ public class Facade {
 		}else {
 			productMenu = new ProduceProductMenu();
 		}
-		productMenu.showMenu();
+
+		System.out.println("Implementing Visitor Pattern");
+		remind();
+		System.out.println("Implementing Iterator Pattern ...");
+//		productMenu.showMenu();
+		ClassProductList productList = new ClassProductList(productMenu);
+		Iterator iterator = productList.createIterator();
+		ProductIterator productIterator = new ProductIterator();
+		System.out.println("\n Menu is : ");
+		while(productIterator.hasNext(iterator)){
+			System.out.println(productIterator.Next(iterator));
+		}
 
 
 
@@ -85,7 +97,11 @@ public class Facade {
 
 	}
 
-	public void remid() {
+	public void remind() {
+		ReminderVisitor reminderVisitor = new ReminderVisitor();
+		ClassProductList productList = new ClassProductList();
+		productList.acccept(reminderVisitor);
+
 
 	}
 
