@@ -16,13 +16,17 @@ public class Facade {
 
 	private Reminder reminder;
 
+	public Facade(){
+		System.out.println("Facade Pattern has started ....");
+	}
+
 	public int login(Login login) {
 		return login.login();
 	}
 
 	public void startFacade(){
-		System.out.println("Facade ==>");
-		UserType = login(new Login());
+		Login login = new Login();
+		UserType = login.login();
 		System.out.println("User is : " + UserType);
 
 		while(true){

@@ -2,12 +2,15 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ProduceProductMenu implements  ProductMenu{
-    public String PRODUCT_INFO = "ProductInfo.txt";
-    public String PRODUCT = "Produce";
-
+public class ProduceProductMenu implements ProductMenu{
+    final public String PRODUCT_INFO = "ProductInfo.txt";
+    final public String PRODUCT = "Produce";
+    public ProduceProductMenu(){
+        System.out.println("Factory Method started ...");
+    }
     @Override
     public void showMenu() {
+
         ArrayList<String> productList = new ArrayList();
         try{
             File fin = new File(PRODUCT_INFO);

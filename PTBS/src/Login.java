@@ -8,14 +8,15 @@ public class Login {
     public String BUYER_INFO = "BuyerInfo.txt";
     public String SELLER_INFO = "SellerInfo.txt";
     public Login(){
-        userType = 0;
+        userType = -1;
     }
     public int login(){
         Scanner sn = new Scanner(System.in);
+        String userName, password;
         System.out.print("Enter UserName : ");
-        String userName = sn.next();
+        userName = sn.next();
         System.out.print("Enter Password : ");
-        String password = sn.next();
+        password = sn.next();
 
         userType = validation(userName, password);
         if (userType != -1){
@@ -40,12 +41,14 @@ public class Login {
                 String[] temp = freader.nextLine().split(":");
                 buyerList.put(temp[0], temp[1]);
             }
+            freader.close();
             File fin2 = new File(SELLER_INFO);
             Scanner freader2 = new Scanner(fin2);
             while(freader2.hasNextLine()){
                 String[] temp = freader2.nextLine().split(":");
                 sellerList.put(temp[0],temp[1]);
             }
+            freader.close();
 
         }catch (Exception e){
             System.err.println(e);

@@ -4,8 +4,12 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class MeatProductMenu implements  ProductMenu{
-    public String PRODUCT_INFO = "ProductInfo.txt";
-    public String PRODUCT = "Meat";
+    final public String PRODUCT_INFO = "ProductInfo.txt";
+    final public String PRODUCT = "Meat";
+
+    public MeatProductMenu(){
+        System.out.println("Factory Method started ...");
+    }
     @Override
     public void showMenu() {
         ArrayList<String> productList = new ArrayList();
