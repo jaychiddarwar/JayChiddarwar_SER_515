@@ -29,6 +29,11 @@ public class Facade {
 		Login login = new Login();
 		UserType = login.login();
 		System.out.println("User is : " + UserType);
+		if(UserType == 0){
+			System.out.println("User is Buyer\n");
+		}else {
+			System.out.println("User is Seller\n");
+		}
 
 		while(true){
 			System.out.println("Select Product from following : \n 0. Meat Product \n 1. Produce Product");
@@ -47,6 +52,7 @@ public class Facade {
 //			System.out.println("Visitor pattern Started ......");
 		}
 		Person person;
+//		System.out.println("\nBridge Pattern implemented .... \n");
 		if(UserType == 0){
 			person = new Buyer();
 		}else {
