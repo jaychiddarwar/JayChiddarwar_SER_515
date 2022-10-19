@@ -44,7 +44,7 @@ public class Facade {
 				System.out.println("Wrong Input Selected, select again");
 
 			}
-			System.out.println("Visitor pattern Started ......");
+//			System.out.println("Visitor pattern Started ......");
 		}
 		Person person;
 		if(UserType == 0){
@@ -59,9 +59,9 @@ public class Facade {
 			productMenu = new ProduceProductMenu();
 		}
 
-		System.out.println("Implementing Visitor Pattern");
+		System.out.println("\nVisitor Pattern implemented ......\n");
 		remind();
-		System.out.println("Implementing Iterator Pattern ...");
+		System.out.println("\nIterator Pattern implemented .......\n");
 //		productMenu.showMenu();
 		ClassProductList productList = new ClassProductList(productMenu);
 		Iterator iterator = productList.createIterator();

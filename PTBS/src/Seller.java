@@ -2,6 +2,9 @@ import java.util.List;
 
 public class Seller extends Person{
     private Offering offering;
+    public Seller(){
+        System.out.println("\nBridge Pattern implemented ....\n");
+    }
     @Override
     public void showMenu() {
 

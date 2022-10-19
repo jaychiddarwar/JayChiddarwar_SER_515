@@ -9,7 +9,7 @@ public class ProduceProductMenu implements ProductMenu{
 
     ArrayList<String> productList;
     public ProduceProductMenu(){
-        System.out.println("Factory Method started ...");
+        System.out.println("\nFactory Pattern implemented .......\n");
         productList = new ArrayList();
         try{
             File fin = new File(PRODUCT_INFO);
