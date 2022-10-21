@@ -1,5 +1,6 @@
-import java.util.Iterator;
-import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
 
 public class Facade {
 
@@ -29,7 +30,7 @@ public class Facade {
 		Login login = new Login();
 		UserType = login.login();
 		boolean flag = true;
-		System.out.println("User is : " + UserType);
+//		System.out.println("User is : " + UserType);
 		if(UserType == 0){
 			System.out.println("User is Buyer\n");
 		}else if (UserType == 1){
@@ -78,10 +79,23 @@ public class Facade {
 			ClassProductList productList = new ClassProductList(productMenu);
 			Iterator iterator = productList.createIterator();
 			ProductIterator productIterator = new ProductIterator();
-			System.out.println("\n Menu is : ");
+			System.out.println("\nMenu is : ");
+			Integer counter = 0;
 			while(productIterator.hasNext(iterator)){
-				System.out.println(productIterator.Next(iterator));
+				System.out.println(++counter + " " + productIterator.Next(iterator));
 			}
+			String username = Login.userName;
+//			System.out.println("\nMenu for User `" + username + "` is :");
+			HashMap<String, List<String>> userProducts = userProduct();
+			List<String> userSpecificProducts = userProducts.get(username);
+			System.out.println("\nProducts of user `" + username + "` in UserProduct are :");
+			int i = 0;
+			for(String val: userSpecificProducts){
+				System.out.println(++i + " " + val);
+			}
+
+
+
 
 		}
 
@@ -89,6 +103,25 @@ public class Facade {
 
 
 
+	}
+
+	public  static HashMap<String, List<String>> userProduct () {
+		HashMap<String, List<String>> userProducts = new HashMap<>();
+		try {
+			File userProductFile = new File("UserProduct.txt");
+			Scanner filereader = new Scanner(userProductFile);
+			while (filereader.hasNextLine()) {
+				String val[] = filereader.nextLine().split(":");
+				if (userProducts.containsKey(val[0])) {
+					userProducts.get(val[0]).add(val[1]);
+				} else {
+					userProducts.put(val[0], new ArrayList<>(Arrays.asList(val[1])));
+				}
+			}
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+		return userProducts;
 	}
 
 	public void addTrading() {

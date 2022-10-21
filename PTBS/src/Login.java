@@ -5,14 +5,16 @@ import java.util.Scanner;
 
 public class Login {
     int userType;
+    public static String userName;
     public String BUYER_INFO = "BuyerInfo.txt";
     public String SELLER_INFO = "SellerInfo.txt";
     public Login(){
         userType = -1;
     }
+
     public int login(){
         Scanner sn = new Scanner(System.in);
-        String userName, password;
+        String password;
         System.out.print("Enter UserName : ");
         userName = sn.next();
         System.out.print("Enter Password : ");
