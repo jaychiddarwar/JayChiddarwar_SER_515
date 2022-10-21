@@ -1,5 +1,8 @@
 # PTBS
 Author: Jay Sachin Chiddarwar
+
+SER 515 Design Pattern Individual Assignment
+
 Product Trading and Bidding System
 
 Step 1: Run the DriverClass.java to run driver Code (DriverClass contain call to Facade)
